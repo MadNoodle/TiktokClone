@@ -15,6 +15,8 @@
 		CE4D60BC2B4DE3A9000900A1 /* TikTokCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D60BB2B4DE3A9000900A1 /* TikTokCloneUITests.swift */; };
 		CE4D60BE2B4DE3A9000900A1 /* TikTokCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D60BD2B4DE3A9000900A1 /* TikTokCloneUITestsLaunchTests.swift */; };
 		CE4D60DB2B4ECE5B000900A1 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D60DA2B4ECE5B000900A1 /* MainTabView.swift */; };
+		CE4D60DD2B4ED19D000900A1 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D60DC2B4ED19D000900A1 /* FeedView.swift */; };
+		CE4D60DF2B4ED3D2000900A1 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D60DE2B4ED3D2000900A1 /* FeedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		CE4D60BB2B4DE3A9000900A1 /* TikTokCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokCloneUITests.swift; sourceTree = "<group>"; };
 		CE4D60BD2B4DE3A9000900A1 /* TikTokCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE4D60DA2B4ECE5B000900A1 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = ../../../../../MainTabView.swift; sourceTree = "<group>"; };
+		CE4D60DC2B4ED19D000900A1 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		CE4D60DE2B4ED3D2000900A1 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +239,8 @@
 		CE4D60D62B4DE415000900A1 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				CE4D60DC2B4ED19D000900A1 /* FeedView.swift */,
+				CE4D60DE2B4ED3D2000900A1 /* FeedCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -390,6 +396,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4D60DD2B4ED19D000900A1 /* FeedView.swift in Sources */,
+				CE4D60DF2B4ED3D2000900A1 /* FeedCell.swift in Sources */,
 				CE4D60A32B4DE39E000900A1 /* ContentView.swift in Sources */,
 				CE4D60A12B4DE39E000900A1 /* TikTokCloneApp.swift in Sources */,
 				CE4D60DB2B4ECE5B000900A1 /* MainTabView.swift in Sources */,
