@@ -14,6 +14,7 @@
 		CE4D60B22B4DE3A9000900A1 /* TikTokCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D60B12B4DE3A9000900A1 /* TikTokCloneTests.swift */; };
 		CE4D60BC2B4DE3A9000900A1 /* TikTokCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D60BB2B4DE3A9000900A1 /* TikTokCloneUITests.swift */; };
 		CE4D60BE2B4DE3A9000900A1 /* TikTokCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D60BD2B4DE3A9000900A1 /* TikTokCloneUITestsLaunchTests.swift */; };
+		CE4D60DB2B4ECE5B000900A1 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D60DA2B4ECE5B000900A1 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		CE4D60B72B4DE3A9000900A1 /* TikTokCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TikTokCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4D60BB2B4DE3A9000900A1 /* TikTokCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokCloneUITests.swift; sourceTree = "<group>"; };
 		CE4D60BD2B4DE3A9000900A1 /* TikTokCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE4D60DA2B4ECE5B000900A1 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = ../../../../../MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 		CE4D60D12B4DE40D000900A1 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				CE4D60DA2B4ECE5B000900A1 /* MainTabView.swift */,
 			);
 			name = Tabbar;
 			path = "New Group/Tabbar";
@@ -389,6 +392,7 @@
 			files = (
 				CE4D60A32B4DE39E000900A1 /* ContentView.swift in Sources */,
 				CE4D60A12B4DE39E000900A1 /* TikTokCloneApp.swift in Sources */,
+				CE4D60DB2B4ECE5B000900A1 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
