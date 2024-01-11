@@ -6,17 +6,24 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct FeedCell: View {
-    let post: Int
+    // MARK: - Properties
+    let post: Post
+    var player: AVPlayer
+    
+    // MARK: - Init
+    init(post: Post, player: AVPlayer) {
+        self.post = post
+        self.player = player
+    }
+    
+    // MARK: - UI
     var body: some View {
         ZStack {
-            Rectangle()
-                    .containerRelativeFrame([.horizontal, .vertical])
-                    .overlay {
-                        Text("Post \(self.post)")
-                            .foregroundStyle(.white)
-                    }
+            CustomVideoPlayer(player: self.player)
+                .containerRelativeFrame([.horizontal, .vertical])
             
             VStack {
                 Spacer()
@@ -92,9 +99,27 @@ struct FeedCell: View {
             }
             .padding()
         }
+        .onTapGesture {
+            switch self.player.timeControlStatus {
+            case .paused:
+                self.player.play()
+            case .waitingToPlayAtSpecifiedRate:
+                break
+            case .playing:
+                self.player.pause()
+            @unknown default:
+                break
+            }
+        }
     }
 }
 
 #Preview {
-    FeedCell(post: 0)
+    FeedCell(
+        post: .init(
+            id: "",
+            videoURL: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        ), player:         
+            AVPlayer()
+    )
 }
