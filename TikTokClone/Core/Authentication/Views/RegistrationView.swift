@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    // MARK: - Properties
+    @StateObject private var registrationViewModel: RegistrationViewModel
+    
     @Environment(\.dismiss) var dismiss
     @State private var email = ""
     @State private var password = ""
     @State private var fullname = ""
     @State private var username = ""
     
+    init(authService: AuthService) {
+        self._registrationViewModel = StateObject(wrappedValue: RegistrationViewModel(authService: authService))
+    }
+    
+    // MARK: - UI
     var body: some View {
         VStack {
             Spacer()
@@ -49,7 +57,12 @@ struct RegistrationView: View {
                 .standard()
             }
             Button(action: {
-                print("DEBUG: login")
+                self.registrationViewModel.createUser(
+                    withEmail: self.email,
+                    password: self.password,
+                    fullname: self.fullname,
+                    username: self.username
+                )
             }, label: {
                 Text("Sign up")
                     .foregroundStyle(.white)
@@ -85,7 +98,7 @@ struct RegistrationView: View {
 }
 
 #Preview {
-    RegistrationView()
+    RegistrationView(authService: AuthService(userService: UserService()))
 }
 
 // MARK: - Form Validation

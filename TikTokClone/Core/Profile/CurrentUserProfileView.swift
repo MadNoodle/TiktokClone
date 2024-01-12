@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct CurrentUserProfileView: View {
+    
+    private let authService: AuthService
+    
+    init(authService: AuthService) {
+        self.authService = authService
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -22,10 +29,19 @@ struct CurrentUserProfileView: View {
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(id: "id", placement: .topBarTrailing) {
+                    Button(action: {
+                        self.authService.logOut()
+                    }, label: {
+                        Text("Sign out")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                    })
+                }
+            }
         }
     }
 }
 
-#Preview {
-    CurrentUserProfileView()
-}
+

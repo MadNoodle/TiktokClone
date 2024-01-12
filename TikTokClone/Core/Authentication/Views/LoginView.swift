@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject private var loginViewModel: LoginViewModel
+    private let authService: AuthService
     @State private var email = ""
     @State private var password = ""
+    
+    init(authService: AuthService) {
+        self.authService = authService
+        self._loginViewModel = StateObject(wrappedValue: LoginViewModel(authService: authService))
+    }
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -50,7 +58,7 @@ struct LoginView: View {
                 
                 // Login Button
                 Button(action: {
-                    print("DEBUG: Sign up")
+                    self.loginViewModel.login(withEmail: self.email, password: self.password)
                 }, label: {
                     Text("Log in")
                         .foregroundStyle(.white)
@@ -68,7 +76,7 @@ struct LoginView: View {
                 
                 Divider()
                 NavigationLink {
-                    RegistrationView()
+                    RegistrationView(authService: self.authService)
                         .navigationBarBackButtonHidden()
                 } label: {
                     HStack(spacing: 3) {
@@ -87,7 +95,7 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(authService: AuthService(userService: UserService()))
 }
 
 // MARK: - Validation Protocol

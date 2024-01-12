@@ -19,12 +19,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct TikTokCloneApp: App {
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    private let authService = AuthService(userService: UserService())
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            RootView(injectedAuthService: self.authService)
         }
     }
 }

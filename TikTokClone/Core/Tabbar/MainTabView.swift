@@ -10,6 +10,11 @@ import SwiftUI
 struct MainTabView: View {
     // MARK: - Properties
     @State private var selectedTab = 0
+    let authService: AuthService
+    
+    init(authService: AuthService) {
+        self.authService = authService
+    }
     
     // MARK: - UI
     var body: some View {
@@ -57,7 +62,7 @@ struct MainTabView: View {
                 .onAppear { self.selectedTab = 3}
                 .tag(3)
             
-            CurrentUserProfileView()
+            CurrentUserProfileView(authService: self.authService)
                 .tabItem {
                     VStack {
                         Image(systemName: "person")
@@ -73,5 +78,5 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(authService: AuthService(userService: UserService()))
 }
