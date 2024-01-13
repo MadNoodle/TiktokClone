@@ -8,23 +8,28 @@
 import Foundation
 import FirebaseAuth
 
-class AuthService {
+class AuthService: AuthServiceProtocol {
+
+    @Published var userSession: String?
     
-    @Published var userSession: FirebaseAuth.User?
-    private let userService: UserService
+    var session: Published<String?>.Publisher {
+        return self.$userSession
+    }
     
-    init(userService: UserService) {
+    private let userService: UserServiceProtocol
+    
+    init(userService: UserServiceProtocol) {
         self.userService = userService
     }
     
     func updateUserSession() {
-        self.userSession = Auth.auth().currentUser
+        self.userSession = Auth.auth().currentUser?.uid
     }
     
     func login(withEmail email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
-            self.userSession = result.user
+            self.userSession = result.user.uid
         } catch {
             throw error
         }
@@ -38,7 +43,7 @@ class AuthService {
     ) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            self.userSession = result.user
+            self.userSession = result.user.uid
             try await self.uploadUserData(
                 withEmail: email,
                 id: result.user.uid,

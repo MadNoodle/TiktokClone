@@ -12,24 +12,46 @@ import Combine
 @MainActor
 class RootViewModel: ObservableObject {
     // MARK: - Properties
-    @Published var userSession: FirebaseAuth.User?
-    private let authService: AuthService
+    @Published var userSession: String?
+    @Published var currentUser: User?
+    
+    private let authService: AuthServiceProtocol
+    private let userService: UserServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Init
-    init(authService: AuthService) {
+    init(
+        authService: AuthServiceProtocol,
+        userService: UserServiceProtocol
+    ) {
         self.authService = authService
+        self.userService = userService
         self.setupSubscribers()
         self.authService.updateUserSession()
     }
-    
 }
 
 private extension RootViewModel {
+    @MainActor
     func setupSubscribers() {
-        self.authService.$userSession.sink { [weak self] user in
-            self?.userSession = user
+            self.authService.session.sink { [weak self] user in
+                DispatchQueue.main.async {
+                    self?.userSession = user
+                    self?.fetchCurrentUser()
+                }
+            }
+            .store(in: &self.cancellables)
+    }
+    
+    @MainActor
+    func fetchCurrentUser() {
+        guard userSession != nil else { return }
+        Task {
+            do {
+                self.currentUser = try await self.userService.fetchCurrentUser()
+            } catch {
+                throw error
+            }
         }
-        .store(in: &self.cancellables)
     }
 }

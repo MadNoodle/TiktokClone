@@ -31,6 +31,9 @@ struct FeedView: View {
         .onAppear {
             self.player.play()
         }
+        .onDisappear {
+            self.player.pause()
+        }
         .scrollPosition(id: self.$scrollPosition)
         .scrollTargetBehavior(.paging)
         .onChange(of: self.scrollPosition) { oldValue, newValue in

@@ -9,25 +9,43 @@ import SwiftUI
 
 struct RootView: View {
     @StateObject private var viewModel: RootViewModel
-    private let authService: AuthService
+    private let authService: AuthServiceProtocol
+    private let userService: UserServiceProtocol
     
-    init(injectedAuthService: AuthService) {
-        self.authService = injectedAuthService
-        self._viewModel = StateObject(wrappedValue: .init(authService: injectedAuthService))
+    init(
+        authService: AuthServiceProtocol,
+        userService: UserServiceProtocol
+    ) {
+        self.authService = authService
+        self.userService = userService
+        self._viewModel = StateObject(
+            wrappedValue: .init(
+                authService: authService,
+                userService: userService
+            )
+        )
     }
     
     var body: some View {
         Group {
             if self.viewModel.userSession != nil {
-                MainTabView(authService: self.authService)
+                if let currentUser = self.viewModel.currentUser {
+                    MainTabView(
+                        authService: self.authService,
+                        userService: self.userService,
+                        currentUser: currentUser
+                    )
+                }
             } else {
                 LoginView(authService: self.authService)
             }
         }
-        
     }
 }
 
 #Preview {
-    RootView(injectedAuthService: AuthService(userService: UserService()))
+    RootView(
+        authService: DIContainer.mock.authService,
+        userService: DIContainer.mock.userService
+    )
 }

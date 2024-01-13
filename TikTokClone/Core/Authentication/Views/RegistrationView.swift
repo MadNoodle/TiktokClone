@@ -17,7 +17,7 @@ struct RegistrationView: View {
     @State private var fullname = ""
     @State private var username = ""
     
-    init(authService: AuthService) {
+    init(authService: AuthServiceProtocol) {
         self._registrationViewModel = StateObject(wrappedValue: RegistrationViewModel(authService: authService))
     }
     
@@ -98,7 +98,7 @@ struct RegistrationView: View {
 }
 
 #Preview {
-    RegistrationView(authService: AuthService(userService: UserService()))
+    RegistrationView(authService: DIContainer.mock.authService)
 }
 
 // MARK: - Form Validation

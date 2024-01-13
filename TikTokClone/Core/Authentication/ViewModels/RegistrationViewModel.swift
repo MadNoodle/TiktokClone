@@ -9,9 +9,9 @@ import Foundation
 
 class RegistrationViewModel: ObservableObject {
     
-    private let authService: AuthService
+    private let authService: AuthServiceProtocol
     
-    init(authService: AuthService) {
+    init(authService: AuthServiceProtocol) {
         self.authService = authService
     }
     

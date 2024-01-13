@@ -45,6 +45,15 @@
 		CE4D61352B519F53000900A1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D61342B519F53000900A1 /* User.swift */; };
 		CE4D61372B519FE1000900A1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D61362B519FE1000900A1 /* UserService.swift */; };
 		CE4D61392B51A07C000900A1 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4D61382B51A07C000900A1 /* FirebaseFirestoreSwift */; };
+		CE4D613B2B52FEC1000900A1 /* PreviewProvider+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D613A2B52FEC1000900A1 /* PreviewProvider+Ext.swift */; };
+		CE4D613F2B530078000900A1 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D613E2B530078000900A1 /* ExploreViewModel.swift */; };
+		CE4D61412B5304C1000900A1 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D61402B5304C1000900A1 /* DIContainer.swift */; };
+		CE4D61432B53056D000900A1 /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D61422B53056D000900A1 /* UserServiceProtocol.swift */; };
+		CE4D61452B5306CA000900A1 /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D61442B5306CA000900A1 /* MockUserService.swift */; };
+		CE4D61472B530722000900A1 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D61462B530722000900A1 /* MockAuthService.swift */; };
+		CE4D61492B53097D000900A1 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D61482B53097D000900A1 /* AuthServiceProtocol.swift */; };
+		CE9F91B72B532CE90091874E /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91B62B532CE90091874E /* UserProfileView.swift */; };
+		CE9F91B92B53306A0091874E /* FirestoreConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91B82B53306A0091874E /* FirestoreConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +109,15 @@
 		CE4D61322B51760E000900A1 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		CE4D61342B519F53000900A1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE4D61362B519FE1000900A1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		CE4D613A2B52FEC1000900A1 /* PreviewProvider+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Ext.swift"; sourceTree = "<group>"; };
+		CE4D613E2B530078000900A1 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		CE4D61402B5304C1000900A1 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		CE4D61422B53056D000900A1 /* UserServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
+		CE4D61442B5306CA000900A1 /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
+		CE4D61462B530722000900A1 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
+		CE4D61482B53097D000900A1 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
+		CE9F91B62B532CE90091874E /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		CE9F91B82B53306A0091874E /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4D61102B50285E000900A1 /* Modifiers */,
+				CE9F91B82B53306A0091874E /* FirestoreConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -208,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				CE4D61362B519FE1000900A1 /* UserService.swift */,
+				CE4D61422B53056D000900A1 /* UserServiceProtocol.swift */,
+				CE4D61442B5306CA000900A1 /* MockUserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -215,6 +236,7 @@
 		CE4D60CD2B4DE3C6000900A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE4D613A2B52FEC1000900A1 /* PreviewProvider+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -239,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4D60A02B4DE39E000900A1 /* TikTokCloneApp.swift */,
+				CE4D61402B5304C1000900A1 /* DIContainer.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -253,8 +276,8 @@
 		CE4D60D22B4DE410000900A1 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				CE4D60E02B4EF1A1000900A1 /* ExploreView.swift */,
-				CE4D60E22B4EF1C2000900A1 /* UserCell.swift */,
+				CE4D613D2B530065000900A1 /* ViewModel */,
+				CE4D613C2B530054000900A1 /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -264,6 +287,7 @@
 			children = (
 				CE4D60EE2B5005CE000900A1 /* Components */,
 				CE4D60E82B500347000900A1 /* CurrentUserProfileView.swift */,
+				CE9F91B62B532CE90091874E /* UserProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -396,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4D611D2B516F96000900A1 /* AuthService.swift */,
+				CE4D61462B530722000900A1 /* MockAuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -404,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4D61132B50822E000900A1 /* AuthentificationFormProtocol.swift */,
+				CE4D61482B53097D000900A1 /* AuthServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -451,6 +477,23 @@
 			isa = PBXGroup;
 			children = (
 				CE4D61322B51760E000900A1 /* RootViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE4D613C2B530054000900A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE4D60E02B4EF1A1000900A1 /* ExploreView.swift */,
+				CE4D60E22B4EF1C2000900A1 /* UserCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE4D613D2B530065000900A1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE4D613E2B530078000900A1 /* ExploreViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -603,24 +646,33 @@
 				CE4D61352B519F53000900A1 /* User.swift in Sources */,
 				CE4D60E72B500114000900A1 /* NotificationCell.swift in Sources */,
 				CE4D60EB2B5003BF000900A1 /* ProfileHeaderView.swift in Sources */,
+				CE4D61412B5304C1000900A1 /* DIContainer.swift in Sources */,
 				CE4D61372B519FE1000900A1 /* UserService.swift in Sources */,
 				CE4D60F12B5005E9000900A1 /* UserStatView.swift in Sources */,
 				CE4D610F2B50270B000900A1 /* RegistrationView.swift in Sources */,
 				CE4D612F2B5175E2000900A1 /* RootView.swift in Sources */,
 				CE4D60E92B500347000900A1 /* CurrentUserProfileView.swift in Sources */,
 				CE4D61122B50286C000900A1 /* CustomTextFieldModifier.swift in Sources */,
+				CE4D61492B53097D000900A1 /* AuthServiceProtocol.swift in Sources */,
 				CE4D60F82B5008F5000900A1 /* FeedViewModel.swift in Sources */,
+				CE4D613B2B52FEC1000900A1 /* PreviewProvider+Ext.swift in Sources */,
 				CE4D60DF2B4ED3D2000900A1 /* FeedCell.swift in Sources */,
 				CE4D60E32B4EF1C2000900A1 /* UserCell.swift in Sources */,
 				CE4D61242B517252000900A1 /* RegistrationViewModel.swift in Sources */,
+				CE4D61452B5306CA000900A1 /* MockUserService.swift in Sources */,
 				CE4D61062B50220B000900A1 /* Post.swift in Sources */,
 				CE4D60A12B4DE39E000900A1 /* TikTokCloneApp.swift in Sources */,
+				CE4D61432B53056D000900A1 /* UserServiceProtocol.swift in Sources */,
+				CE9F91B92B53306A0091874E /* FirestoreConstants.swift in Sources */,
 				CE4D60ED2B5003C7000900A1 /* PostsGridView.swift in Sources */,
+				CE4D613F2B530078000900A1 /* ExploreViewModel.swift in Sources */,
 				CE4D60E12B4EF1A1000900A1 /* ExploreView.swift in Sources */,
 				CE4D61142B50822E000900A1 /* AuthentificationFormProtocol.swift in Sources */,
+				CE9F91B72B532CE90091874E /* UserProfileView.swift in Sources */,
 				CE4D61332B51760E000900A1 /* RootViewModel.swift in Sources */,
 				CE4D60E52B50010C000900A1 /* NotificationsView.swift in Sources */,
 				CE4D610D2B5026FF000900A1 /* LoginView.swift in Sources */,
+				CE4D61472B530722000900A1 /* MockAuthService.swift in Sources */,
 				CE4D61032B5021DE000900A1 /* MainTabView.swift in Sources */,
 				CE4D611E2B516F96000900A1 /* AuthService.swift in Sources */,
 			);
@@ -783,9 +835,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TikTokClone/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -802,6 +856,7 @@
 				OTHER_LDFLAGS = "-objc";
 				PRODUCT_BUNDLE_IDENTIFIER = mjanneau.tiktok.com.TikTokClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -813,9 +868,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TikTokClone/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -832,6 +889,7 @@
 				OTHER_LDFLAGS = "-objc";
 				PRODUCT_BUNDLE_IDENTIFIER = mjanneau.tiktok.com.TikTokClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

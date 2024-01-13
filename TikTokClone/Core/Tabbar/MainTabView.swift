@@ -10,10 +10,18 @@ import SwiftUI
 struct MainTabView: View {
     // MARK: - Properties
     @State private var selectedTab = 0
-    let authService: AuthService
+    let authService: AuthServiceProtocol
+    let userService: UserServiceProtocol
+    let currentUser: User
     
-    init(authService: AuthService) {
+    init(
+        authService: AuthServiceProtocol,
+        userService: UserServiceProtocol,
+        currentUser: User
+    ) {
         self.authService = authService
+        self.userService = userService
+        self.currentUser = currentUser
     }
     
     // MARK: - UI
@@ -31,7 +39,7 @@ struct MainTabView: View {
                 .tag(0)
             
             
-            ExploreView()
+            ExploreView(userService: self.userService)
                 .tabItem {
                     VStack {
                         Image(systemName: "person.2")
@@ -62,7 +70,10 @@ struct MainTabView: View {
                 .onAppear { self.selectedTab = 3}
                 .tag(3)
             
-            CurrentUserProfileView(authService: self.authService)
+            CurrentUserProfileView(
+                authService: self.authService,
+                user: self.currentUser
+            )
                 .tabItem {
                     VStack {
                         Image(systemName: "person")
@@ -78,5 +89,9 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView(authService: AuthService(userService: UserService()))
+    MainTabView(
+        authService: DIContainer.mock.authService,
+        userService: DIContainer.mock.userService, 
+        currentUser: PreviewProvider.users[0]
+    )
 }

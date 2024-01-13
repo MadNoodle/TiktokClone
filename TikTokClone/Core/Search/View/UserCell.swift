@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserCell: View {
+    let user: User
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: "person.circle.fill")
@@ -16,12 +17,13 @@ struct UserCell: View {
                 .foregroundStyle(.gray)
             
             VStack(alignment: .leading) {
-                Text("test_user")
+                Text(self.user.username)
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                Text("Test name")
+                Text(self.user.fullname)
                     .font(.footnote)
             }
+            .foregroundStyle(.black)
             
             Spacer()
         }
@@ -29,5 +31,5 @@ struct UserCell: View {
 }
 
 #Preview {
-    UserCell()
+    UserCell(user: PreviewProvider.users[0])
 }

@@ -9,10 +9,15 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     
-    private let authService: AuthService
+    private let authService: AuthServiceProtocol
+    private let currentUser: User
     
-    init(authService: AuthService) {
+    init(
+        authService: AuthServiceProtocol,
+        user: User
+    ) {
         self.authService = authService
+        self.currentUser = user
     }
 
     var body: some View {
@@ -20,7 +25,7 @@ struct CurrentUserProfileView: View {
             ScrollView {
                 VStack(spacing: 2) {
                     // Profile Header
-                    ProfileHeaderView()
+                    ProfileHeaderView(user: self.currentUser)
                     
                     // Posts grid
                     PostsGridView()
